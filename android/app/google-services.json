@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "336791101922",
+    "project_id": "garage-chai",
+    "storage_bucket": "garage-chai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336791101922:android:6d7212167862cdf63019bb",
+        "android_client_info": {
+          "package_name": "com.example.garage_chai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336791101922-mj12lbfqd5ggjaevnu2ou84g6rhgqdqq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4EN_hW7sFXN3riWmiDEkM6crsEXeE2tw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336791101922-mj12lbfqd5ggjaevnu2ou84g6rhgqdqq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
