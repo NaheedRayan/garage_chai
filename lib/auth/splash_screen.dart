@@ -15,8 +15,10 @@ class _splash_screenState extends State<splash_screen> {
   @override
   initState() {
     // print("initState ");
-    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.top]);
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
+
   }
 
   Widget build(BuildContext context) {

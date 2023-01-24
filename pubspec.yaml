@@ -38,6 +38,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   firebase_core: ^2.4.1
   firebase_auth: ^4.2.4
+  cloud_firestore: ^4.3.1
 
   pinput: ^2.2.21
 
@@ -68,6 +69,12 @@ flutter:
     - assets/splash_background.jpg
     - assets/garage_logo.png
     - assets/img1.png
+    - assets/garage_logo_home_page.png
+    - assets/garage.jpg
+    - assets/car.png
+    - assets/bike.png
+    - assets/cycle.png
+    - assets/truckmini.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

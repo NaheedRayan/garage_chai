@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:garage_chai/auth/login.dart';
 import 'package:garage_chai/home.dart';
+import 'package:garage_chai/main.dart';
 import 'package:pinput/pinput.dart';
 
 class MyVerify extends StatefulWidget {
@@ -129,8 +131,42 @@ class _MyVerifyState extends State<MyVerify> {
 
                         late FirebaseAuth _auth = FirebaseAuth.instance ;
                         late Stream<User?> _authStateChanges = _auth.authStateChanges() ;
-                        _authStateChanges.listen((User? user){
-                          print("...user id ${user?.uid}");
+                        User user ;
+                        _authStateChanges.listen((User? user) async {
+                          print("...user id ${user?.uid}\n");
+                          print("...user email ${user?.email}\n");
+                          print("...user verified ${user?.emailVerified}\n");
+                          print("...user phone ${user?.phoneNumber}\n");
+                          print("...user name ${user?.displayName}\n");
+                          print("...user metadata ${user?.metadata}\n");
+
+
+                          var doc = await FirebaseFirestore.instance.collection("users").doc(user?.phoneNumber).get() ;
+                          var y = user!.phoneNumber ;
+                          MyApp.user_phone_number = y! ;
+
+
+                          var data = {
+                            "username":"",
+                            "uuid":user?.uid ,
+                            "phoneNumber":user?.phoneNumber,
+                            "photoURL":"",
+                            "email":"",
+                            "emailVerified":"",
+                            "createdAt":  DateTime.now(),
+
+
+                            "card_car":"Unverified",
+                            "card_bike":"Unverified",
+                            "card_cycle":"Unverified",
+                            "card_mini_truck":"Unverified",
+                            "card_garage":"Unverified",
+
+                          };
+                          if(!doc.exists){
+                            FirebaseFirestore.instance.collection("users").doc(user?.phoneNumber).set(data);
+                          }
+
                         });
                         Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const home()), (route) => false);
                       }catch(e){
